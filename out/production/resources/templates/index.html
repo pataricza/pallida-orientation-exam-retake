@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<form class="form-inline" action="#" th:action="@{edit}" th:object="${uniquenames}" method="post">
+    <select>
+        <option value=""> Select item name </option>
+        <option th:each="oneName : ${uniquenames}"
+                th:value="${oneName}"
+                th:text="${oneName}"/>
+    </select>
+
+    <select>
+        <option value=""> Select item size </option>
+        <option th:each="oneSize : ${uniquesizes}"
+                th:value="${oneSize}"
+                th:text="${oneSize}"/>
+    </select>
+    <label for="quantity"><h2>Name:</h2></label>
+    <input type="text" id="quantity"  th:required="required"/>
+    <input type="submit" value="Get total" />
+</form>
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Manufacturer</th>
+        <th>Category</th>
+        <th>Size</th>
+        <th>Unit price</th>
+    </tr>
+    <tr th:each="oneItem : ${items}">
+        <td th:text="${oneItem.itemName}"></td>
+        <td th:text="${oneItem.manufacturer}"></td>
+        <td th:text="${oneItem.category}"></td>
+        <td th:text="${oneItem.size}"></td>
+        <td th:text="${oneItem.unitPrice}"></td>
+    </tr>
+</table>
+</body>
+</html>

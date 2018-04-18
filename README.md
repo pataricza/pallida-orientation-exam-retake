@@ -11,10 +11,10 @@ Build a webshop that people can use to order some merchandise from the Greenfox 
 Detailed info is in the language specific description.
 
 ## Getting Started
- - Fork this repository under your own account
- - Clone the forked repository to your computer
+ - Fork this com.greenfox.demo.repository under your own account
+ - Clone the forked com.greenfox.demo.repository to your computer
  - Commit your progress frequently and with descriptive commit messages
- - All your answers and solutions should go in this repository
+ - All your answers and solutions should go in this com.greenfox.demo.repository
 
 ## What can I use?
 - You can use any resource online, but **work individually**
