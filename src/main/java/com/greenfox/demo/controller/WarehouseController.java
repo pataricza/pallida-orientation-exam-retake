@@ -1,6 +1,7 @@
 package com.greenfox.demo.controller;
 
 import com.greenfox.demo.model.NewOrder;
+import com.greenfox.demo.model.Summary;
 import com.greenfox.demo.model.Warehouse;
 import com.greenfox.demo.service.WarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -32,8 +34,9 @@ public class WarehouseController {
   }
 
   @PostMapping(value = "/warehouse/summary")
-  public String getNewOrder(@ModelAttribute NewOrder order) {
-
+  public String getNewOrder(@ModelAttribute NewOrder order, Model model) {
+    Summary summary = warehouseService.calculateSummary(order);
+    model.addAttribute("summary", summary);
     return "summary";
   }
 }

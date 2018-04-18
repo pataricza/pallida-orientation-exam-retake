@@ -53,4 +53,14 @@ public class WarehouseService {
     }
     return summary;
   }
+
+  public List<Warehouse> findItemsByParam(String range, float price) {
+    if (range.equals("lower"))
+      return warehouseRepository.findAllByUnitPriceIsLessThan(price);
+    else if (range.equals("equals"))
+      return warehouseRepository.findAllByUnitPriceEquals(price);
+    else if (range.equals("higher"))
+      return warehouseRepository.findAllByUnitPriceGreaterThan(price);
+    return warehouseRepository.findAllByUnitPriceEquals(price);
+  }
 }

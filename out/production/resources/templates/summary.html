@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Item name</th>
+        <th>Manufacturer</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Sub-total price</th>
+    </tr>
+    <tr>
+        <td th:text="${summary.name}"></td>
+        <td th:text="${summary.manufacturer}"></td>
+        <td th:text="${summary.category}"></td>
+        <td th:text="${summary.quantity}"></td>
+        <td th:text="${summary.total}"></td>
+    </tr>
+</table>
+</body>
+</html>

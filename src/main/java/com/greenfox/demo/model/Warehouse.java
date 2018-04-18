@@ -1,11 +1,14 @@
 package com.greenfox.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Warehouse {
 
   @Id

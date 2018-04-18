@@ -5,22 +5,20 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<form class="form-inline" action="#" th:action="@{edit}" th:object="${uniquenames}" method="post">
-    <select>
+<form class="form-inline" action="#" th:action="@{/warehouse/summary}" th:object="${order}" method="post">
+    <select th:field="*{name}">
         <option value=""> Select item name </option>
         <option th:each="oneName : ${uniquenames}"
                 th:value="${oneName}"
                 th:text="${oneName}"/>
     </select>
-
-    <select>
+    <select th:field="*{size}">
         <option value=""> Select item size </option>
         <option th:each="oneSize : ${uniquesizes}"
                 th:value="${oneSize}"
                 th:text="${oneSize}"/>
     </select>
-    <label for="quantity"><h2>Name:</h2></label>
-    <input type="text" id="quantity"  th:required="required"/>
+    <input type="number" th:field="*{quantity}" th:required="required"/>
     <input type="submit" value="Get total" />
 </form>
 <table>

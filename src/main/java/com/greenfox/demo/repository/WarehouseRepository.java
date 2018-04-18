@@ -13,4 +13,8 @@ public interface WarehouseRepository extends CrudRepository<Warehouse, Long>{
 
   @Query("select distinct w.size from Warehouse w")
   List<String> uniqueSizes();
+
+  List<Warehouse> findAllByUnitPriceEquals(float price);
+  List<Warehouse> findAllByUnitPriceIsLessThan(float price);
+  List<Warehouse> findAllByUnitPriceGreaterThan(float price);
 }
