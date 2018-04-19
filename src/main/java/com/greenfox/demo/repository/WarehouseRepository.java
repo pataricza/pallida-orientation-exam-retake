@@ -1,6 +1,7 @@
 package com.greenfox.demo.repository;
 
 import com.greenfox.demo.model.Warehouse;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

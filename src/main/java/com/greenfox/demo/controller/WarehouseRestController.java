@@ -21,6 +21,7 @@ public class WarehouseRestController {
   @GetMapping(value = "/warehouse/query")
   public ResponseEntity<QuareyResult> quareyTheItems(@RequestParam("price") int price, @RequestParam("type") String type) {
     List<Warehouse> result = warehouseService.findItemsByParam(type, price);
-    return ResponseEntity.status(HttpStatus.OK).body(new QuareyResult("OK", result));
+    QuareyResult qResult = new QuareyResult("ok", result);
+    return ResponseEntity.status(HttpStatus.OK).body(qResult);
   }
 }
