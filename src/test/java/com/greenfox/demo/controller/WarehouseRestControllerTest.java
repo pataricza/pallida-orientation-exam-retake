@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {WarehouseRestController.class, WarehouseService.class})
+@SpringBootTest(classes = {WarehouseRestController.class})
 @WebAppConfiguration
 @EnableWebMvc
 public class WarehouseRestControllerTest {
@@ -70,6 +70,6 @@ public class WarehouseRestControllerTest {
     mockMvc.perform(get("/warehouse/query").param("price", "50").param("type", "lower"))
         .andDo(print())
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$.result").value("ok"));
+        .andExpect(jsonPath("$.clothes[0].id").value(0));
   }
 }
